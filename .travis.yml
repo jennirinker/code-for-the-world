@@ -1,9 +1,18 @@
+# specify language and version
 language: python
 python:
   - "3.6"
+
+# which branches to run CI on
+branches:
+  only:
+  - master
+  - test_ci
+
 # command to install dependencies
 install:
   - pip install .
+
 # command to run tests
 script:
   - pytest --cov=mypack tests/
