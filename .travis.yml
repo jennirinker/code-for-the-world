@@ -6,4 +6,4 @@ install:
   - pip install .
 # command to run tests
 script:
-  - pytest --cov=mypack
+  - pytest --cov=mypack tests/
