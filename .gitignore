@@ -1,3 +1,6 @@
+# repo-specific things to ignore
+*.out
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
