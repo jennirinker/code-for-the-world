@@ -21,6 +21,7 @@ setup(name='mypack',  # name of package on import
         'matplotlib',  # for plotting
         'numpy',  # for numerical calculations
         'numpydoc',  # numpy-style docstrings for sphinx
+        'pandas',  # store airfoil data in dataframes
         'pytest',  # for testing
         'pytest-cov',  # for calculating coverage
         'sphinx',  # generating documentation
