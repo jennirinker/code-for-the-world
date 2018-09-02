@@ -22,7 +22,25 @@ before_script:
 
 # command to test examples and then run tests
 script:
+  # test examples
   - pytest examples/
+  # run tests
   - pytest --cov=mypack tests/
+  # use sphinx to build docs
   - cd docs/
   - make html
+  # tell GitHub not to use jekyll
+  - touch _build/html/.nojekyll
+
+# Tell Travis CI to copy the documentation to the gh-pages branch of
+# your GitHub repository.
+#     https://amarder.github.io/using-travis-ci-to-build-sphinx-docs/
+#     Set GitHub token:
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: master
+  local_dir: _build/html/
