@@ -30,12 +30,12 @@ script:
   - cd docs/
   - make html
   # tell GitHub not to use jekyll
-  - touch _build/html/.nojekyll
+  - touch build/html/.nojekyll
 
 # Tell Travis CI to copy the documentation to the gh-pages branch of
 # your GitHub repository.
 #     https://amarder.github.io/using-travis-ci-to-build-sphinx-docs/
-#     Set GitHub token:
+# Set GitHub token: https://docs.travis-ci.com/user/deployment/pages/#setting-the-github-token
 deploy:
   provider: pages
   skip_cleanup: true
@@ -43,4 +43,4 @@ deploy:
   keep-history: true
   on:
     branch: master
-  local_dir: _build/html/
+  local_dir: build/html/
