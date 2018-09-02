@@ -41,6 +41,7 @@ Project Contents
     :maxdepth: 2
 
     installation
+    configuring_travis
     api
 
 .. toctree::
