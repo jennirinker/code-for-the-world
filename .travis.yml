@@ -1,32 +1,19 @@
 # specify language and version
-#    https://docs.travis-ci.com/user/languages/python/
 language: python
 python:
   - "3.6"
 
-# build only on certain branches
-#     https://docs.travis-ci.com/user/customizing-the-build/#building-specific-branches
+# which branches to run CI on
 branches:
   only:
   - master
   - test_ci
-  - docs
 
-# install dependencies
-#     https://docs.travis-ci.com/user/languages/python/
+# command to install dependencies
 install:
   - pip install .
 
-# set up the display for making our images
-#    https://docs.travis-ci.com/user/gui-and-headless-browsers/
-before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
-
-# run tests and test examples
-#     https://docs.travis-ci.com/user/languages/python/
+# command to test examples and then run tests
 script:
-  - pytest --cov=mypack
-
-# build documentation
+  - pytest examples/
+  - pytest --cov=mypack tests/
