@@ -9,10 +9,17 @@ branches:
   - master
   - test_ci
 
+# set up the display for saving our images
+#    https://docs.travis-ci.com/user/gui-and-headless-browsers/
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+
 # command to install dependencies
 install:
   - pip install .
 
-# command to run tests
+# command to run tests and examples
 script:
   - pytest --cov=mypack
