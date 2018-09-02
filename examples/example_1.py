@@ -5,14 +5,14 @@ import os
 
 import matplotlib.pyplot as plt
 
-from mypack.lib.io import read_selig
-from mypack.lib.plotting import plot_airfoil
+from mypack.utils.io import read_selig
+from mypack.utils.plotting import plot_airfoil
 
 
 # script inputs
 mod_path = os.path.dirname(os.path.abspath(__file__))  # current module
 air_path = os.path.join(mod_path, '..',
-                        'tests', 'test_lib', 'files', 'demo_selig.dat')
+                        'tests', 'test_utils', 'files', 'demo_selig.dat')
 
 # load coordinates from a a selig-style airfoil file
 air_df = read_selig(air_path)

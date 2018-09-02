@@ -8,7 +8,7 @@ rink@dtu.dk
 """
 import os
 
-import mypack.lib.io as my_io
+import mypack.utils.io as my_io
 import pandas as pd
 
 

@@ -6,8 +6,8 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 
-import mypack.lib.io as my_io
-from mypack.lib.plotting import plot_airfoil
+import mypack.utils.io as my_io
+from mypack.utils.plotting import plot_airfoil
 
 
 def test_plot_airfoil():
