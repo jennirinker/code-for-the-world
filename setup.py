@@ -16,7 +16,8 @@ setup(name='mypack',  # name of package on import
       author='Jenni Rinker',  # author(s)
       author_email='rink@dtu.dk',  # email
       license='MIT',  # licensing
-      packages=['mypack'],  # names of folders
+      packages=['mypack',  # main package
+                'mypack.utils'],  # utils subdirectory (or use find)
       install_requires=[  # dependencies
         'matplotlib',  # for plotting
         'numpy',  # for numerical calculations
