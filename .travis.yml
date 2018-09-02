@@ -4,44 +4,29 @@ language: python
 python:
   - "3.6"
 
-# define the order of our stages
-#     https://docs.travis-ci.com/user/build-stages#specifying-stage-order-and-conditions
-#     https://docs.travis-ci.com/user/conditions-v1#specification
-stages:
-  - install
-  - test
-    if: branch = master OR branch = test_ci
-#  - deploy
-#    if branch = master OR branch = docs
+# build only on certain branches
+#     https://docs.travis-ci.com/user/customizing-the-build/#building-specific-branches
+branches:
+  only:
+  - master
+  - test_ci
+  - docs
 
-# === STAGE 1: install dependencies ===
+# install dependencies
 #     https://docs.travis-ci.com/user/languages/python/
 install:
   - pip install .
 
-# 
-jobs:
-  include:
-    - stage: test
-      before_script:
-        - "export DISPLAY=:99.0"
-        - "sh -e /etc/init.d/xvfb start"
-        - sleep 3 # give xvfb some time to start
-      script: pytest --cov=mypack
-#    - stage: deploy
-#      script: ./deploy
-
-
 # set up the display for making our images
 #    https://docs.travis-ci.com/user/gui-and-headless-browsers/
-#before_script:
-#  - "export DISPLAY=:99.0"
-#  - "sh -e /etc/init.d/xvfb start"
-#  - sleep 3 # give xvfb some time to start
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
 
-# command to run tests and examples
+# run tests and test examples
 #     https://docs.travis-ci.com/user/languages/python/
-#script:
-#  - pytest --cov=mypack
+script:
+  - pytest --cov=mypack
 
 # build documentation
