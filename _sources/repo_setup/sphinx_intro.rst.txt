@@ -16,9 +16,9 @@ in order to trigger this automated sphinx behavior.
 The easiest way to get started with sphinx in your project is to use the
 ``sphinx-quickstart`` command. If you have installed sphinx in your terminal,
 then you can run this command. The quickstart walks you through some 
-configuration questions, then it will create a docs directory with a sphinx
-configuration file, makefiles for both Windows and Linux (if you specified
-that you want a Windows makefile), and a subdirectory that contains the source
+configuration questions, then it will create a docs directory with makefiles
+for both Windows and Linux (if you specified that you want a Windows makefile),
+and a subdirectory that contains the a sphinx configuration file and the source
 text files.
 
 I personally hate the sphinx default style. It uses a theme called alabaster
@@ -35,7 +35,7 @@ your package.
 
 To update the content of your source files, I recommend you check the source
 files that I used to generate this very page
-`on GitHub <>`__. **LINK**
+`on GitHub <https://github.com/jennirinker/code-for-the-world/tree/master/docs/source>`__.
 They will give you an idea of what your text files need to look like in order
 to generate a website that looks like this.
 

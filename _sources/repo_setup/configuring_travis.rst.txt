@@ -27,7 +27,7 @@ Configuration steps:
       box for all repo settings. **IMPORTANT!!!** Copy this token somewhere
       before you leave the page. You will never be able to see it again.
 
-   c. Go to `travis-ci.com <travis-ci.com>`__ and find the settings for the
+   c. Go to `travis-ci.com <https://travis-ci.com/>`__ and find the settings for the
       repository you're working on. In the "Environment Variables" section,
       defined a new one called ``GITHUB_TOKEN`` and copy in your token from
       the step above. **IMPORTANT!!!** Be sure that the toggle to display 
@@ -35,6 +35,7 @@ Configuration steps:
       not be shared.  
 
 4. Assuming your Travis CI configuration file and your repo are structured
-   properly, this should be it! You can go to `travis-ci.com <travis-ci.com>`__
-   to monitor any running builds. If you choose to push to GitLab pages, then
-   the URL for that should be ``https://<user>.github.io/<repo_name>``.
+   properly, this should be it! You can go to
+   `travis-ci.com <https://travis-ci.com/>`__ to monitor any running builds. If
+   you choose to push to GitLab pages, then the URL for that should be
+   ``https://<user>.github.io/<repo_name>``.
