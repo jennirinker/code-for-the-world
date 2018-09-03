@@ -1,5 +1,8 @@
 # Code for the World
 
+<!--Embedded status images: https://docs.travis-ci.com/user/status-images/-->
+https://travis-ci.com/jennirinker/code-for-the-world.svg?branch=master
+
 This repository is meant to serve as a stripped-down example of how you can
 combine ``sphinx`` for generating documentation, ``pytest`` for testing, and
 GitHub's Travis CI for automating both processes.
