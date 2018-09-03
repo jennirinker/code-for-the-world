@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview: module code &mdash; Code for the World 0.1 documentation</title>
+  <title>Configuring Travis CI &mdash; Code for the World 0.1 documentation</title>
   
 
   
@@ -27,7 +27,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Installation" href="../demo/installation.html" />
+    <link rel="prev" title="Introduction to pytest" href="pytest_intro.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -84,11 +86,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../how_to_use.html">How to use this project</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Setting up your repo</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../repo_setup/repo_structure.html">Structuring your repository</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repo_setup/sphinx_intro.html">Introduction to sphinx</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repo_setup/pytest_intro.html">Introduction to pytest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repo_setup/configuring_travis.html">Configuring Travis CI</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="repo_structure.html">Structuring your repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx_intro.html">Introduction to sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pytest_intro.html">Introduction to pytest</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuring Travis CI</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Demo documentation</span></p>
 <ul>
@@ -154,10 +156,14 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Overview: module code</li>
+      <li>Configuring Travis CI</li>
     
     
       <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/repo_setup/configuring_travis.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -169,14 +175,54 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>All modules for which code is available</h1>
-<ul><li><a href="calcs.html">calcs</a></li>
-</ul>
+  <div class="section" id="configuring-travis-ci">
+<span id="configuring-travis"></span><h1>Configuring Travis CI<a class="headerlink" href="#configuring-travis-ci" title="Permalink to this headline">¶</a></h1>
+<p>Continuous integration is an extremely powerful tool for automating the testing
+and documentation generation of code. You can even hook it up with GitHub pages
+to put your documentation on the website.</p>
+<p>Configuration steps:</p>
+<ol class="arabic simple">
+<li>Activate Travis CI on a GitHub repository you have owner permissions for.
+Instructions <a class="reference external" href="https://docs.travis-ci.com/user/getting-started/">here</a>.</li>
+<li>Add the configuration file for Travis CI: <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code>. You can use the
+one in this repository as a demo of what you can do with Travis.</li>
+<li>If you want to push your sphinx documentation to GitHub pages, you need to
+create a personal access token.<ol class="loweralpha">
+<li>Go to your <a class="reference external" href="https://github.com/settings">Settings page</a> on
+GitHub, then click “Developer Settings” then “Personal access tokens”.</li>
+<li>Generate a new token. If the repo is public, you only need to check the
+box related to accessing public repos. You can alternatively check the
+box for all repo settings. <strong>IMPORTANT!!!</strong> Copy this token somewhere
+before you leave the page. You will never be able to see it again.</li>
+<li>Go to <a class="reference external" href="travis-ci.com">travis-ci.com</a> and find the settings for the
+repository you’re working on. In the “Environment Variables” section,
+defined a new one called <code class="docutils literal notranslate"><span class="pre">GITHUB_TOKEN</span></code> and copy in your token from
+the step above. <strong>IMPORTANT!!!</strong> Be sure that the toggle to display
+the value in the build log is off. This is a private token that should
+not be shared.</li>
+</ol>
+</li>
+<li>Assuming your Travis CI configuration file and your repo are structured
+properly, this should be it! You can go to <a class="reference external" href="travis-ci.com">travis-ci.com</a>
+to monitor any running builds. If you choose to push to GitLab pages, then
+the URL for that should be <code class="docutils literal notranslate"><span class="pre">https://&lt;user&gt;.github.io/&lt;repo_name&gt;</span></code>.</li>
+</ol>
+</div>
+
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../demo/installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pytest_intro.html" class="btn btn-neutral" title="Introduction to pytest" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview: module code &mdash; Code for the World 0.1 documentation</title>
+  <title>Structuring your repository &mdash; Code for the World 0.1 documentation</title>
   
 
   
@@ -27,7 +27,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction to sphinx" href="sphinx_intro.html" />
+    <link rel="prev" title="How to use this project" href="../how_to_use.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -84,11 +86,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../how_to_use.html">How to use this project</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Setting up your repo</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../repo_setup/repo_structure.html">Structuring your repository</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repo_setup/sphinx_intro.html">Introduction to sphinx</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repo_setup/pytest_intro.html">Introduction to pytest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repo_setup/configuring_travis.html">Configuring Travis CI</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Structuring your repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx_intro.html">Introduction to sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pytest_intro.html">Introduction to pytest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuring_travis.html">Configuring Travis CI</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Demo documentation</span></p>
 <ul>
@@ -154,10 +156,14 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Overview: module code</li>
+      <li>Structuring your repository</li>
     
     
       <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/repo_setup/repo_structure.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -169,14 +175,58 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>All modules for which code is available</h1>
-<ul><li><a href="calcs.html">calcs</a></li>
-</ul>
+  <div class="section" id="structuring-your-repository">
+<span id="package-structure"></span><h1>Structuring your repository<a class="headerlink" href="#structuring-your-repository" title="Permalink to this headline">¶</a></h1>
+<p>There are four main considerations when building your repository. First, you
+need to consider the structure of the package itself. Second, the location of
+your tests. Third, the location of the source files for your documentation.
+Fourth and last, the location of any examples you provide to your users.</p>
+<p><strong>Structure of a python package</strong></p>
+<p>There are many tutorials online about the structuring of Python packages. You
+know, directories with <code class="docutils literal notranslate"><span class="pre">*.py</span></code> files and an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file,
+which tells Python that the directory itself is a module. I won’t reinvent the
+wheel here; just Google “structure of a Python package” to read more about
+that.</p>
+<p>An interesting note is the difference between the structure of a package and
+it’s architecture. In other words, what is the logic behind which functions go
+where? DO you put classes in one module? Functions in another? Do you have a
+<code class="docutils literal notranslate"><span class="pre">utils</span></code> folder for basic underlying functionality? I don’t know if is a
+good answer to this question. It’s up to you.</p>
+<p><strong>Where to put tests</strong></p>
+<p>The recommended practice for pytest is <a href="#id1"><span class="problematic" id="id2">`here &lt;&gt;`_</span></a>. <strong>LINK</strong>
+There are two possible places to put your test files so that pytest can find
+them. I prefer placing my tests in a separate directory away from the code.</p>
+<p><strong>Where to put documentation</strong></p>
+<p>The general rule of thumb is to have a top-level directory called <code class="docutils literal notranslate"><span class="pre">doc</span></code> or
+<code class="docutils literal notranslate"><span class="pre">docs</span></code>. If you run <code class="docutils literal notranslate"><span class="pre">sphinx-quickstart</span></code> to initialize your sphinx
+documentation, you will run it from the top level of your repository and it
+will create this folder for you.</p>
+<p>Within your <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder, there will be your sphinx configuration file
+<code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, the makefiles for converting your source text files into html or
+a LaTeX pdf, and a directory with the source files for your documentation,
+usually called <code class="docutils literal notranslate"><span class="pre">source</span></code>. If you have generated the sphinx html files locally,
+there will also be a directory with the build files, often called <code class="docutils literal notranslate"><span class="pre">build</span></code>.</p>
+<p><strong>Where to put examples</strong></p>
+<p>There is no recommended practice for where to store examples or demos for your
+code. I like to have a separate folder called <code class="docutils literal notranslate"><span class="pre">examples</span></code>. Then I can run
+<code class="docutils literal notranslate"><span class="pre">pytest</span></code> on that directory and make sure that my examples all work every time
+I update the master branch.</p>
+</div>
+
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sphinx_intro.html" class="btn btn-neutral float-right" title="Introduction to sphinx" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../how_to_use.html" class="btn btn-neutral" title="How to use this project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

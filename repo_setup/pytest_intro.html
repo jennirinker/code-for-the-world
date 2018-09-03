@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview: module code &mdash; Code for the World 0.1 documentation</title>
+  <title>Introduction to pytest &mdash; Code for the World 0.1 documentation</title>
   
 
   
@@ -27,7 +27,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Configuring Travis CI" href="configuring_travis.html" />
+    <link rel="prev" title="Introduction to sphinx" href="sphinx_intro.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -84,11 +86,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../how_to_use.html">How to use this project</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Setting up your repo</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../repo_setup/repo_structure.html">Structuring your repository</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repo_setup/sphinx_intro.html">Introduction to sphinx</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repo_setup/pytest_intro.html">Introduction to pytest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repo_setup/configuring_travis.html">Configuring Travis CI</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="repo_structure.html">Structuring your repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx_intro.html">Introduction to sphinx</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to pytest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuring_travis.html">Configuring Travis CI</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Demo documentation</span></p>
 <ul>
@@ -154,10 +156,14 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Overview: module code</li>
+      <li>Introduction to pytest</li>
     
     
       <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/repo_setup/pytest_intro.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -169,14 +175,59 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>All modules for which code is available</h1>
-<ul><li><a href="calcs.html">calcs</a></li>
-</ul>
+  <div class="section" id="introduction-to-pytest">
+<span id="pytest-intro"></span><h1>Introduction to pytest<a class="headerlink" href="#introduction-to-pytest" title="Permalink to this headline">¶</a></h1>
+<p>Code should always be tested. For pure development, tests are set up to check
+bugs and make sure that the software has the correct functionality. For
+scientific applications, we can also add tests to verify that the model
+outputs match the theoretical values.</p>
+<p>The process of testing involves writing functions in specific ways and specific
+locations and then running special programs on those test modules. The testing
+programs will collect the number of failures and return a failure report upon
+completion.</p>
+<p>There are two main testing packages: <code class="docutils literal notranslate"><span class="pre">unittest</span></code>, which is built into the
+Python library, and <code class="docutils literal notranslate"><span class="pre">pytest</span></code>, which is a third-party package. The decision of
+which of these packages is superior to the other is hotly contested.
+Personally, I prefer pytest because I think the tests are easier to understand
+for inexperienced programmers. I also like a lot of its functionality, though I
+don’t know how much of that functionality is duplicated in unittest.</p>
+<p>The default behavior for pytest is to iterate through a selected test
+directory and to collect all modules titled <code class="docutils literal notranslate"><span class="pre">test_*.py</span></code>. In each of those
+modules, it collects and executes all the functions titled <code class="docutils literal notranslate"><span class="pre">test_*</span></code>.</p>
+<p>This default collection behavior can be overwritten by specifying a special
+configuration file. And this is how I get pytest to also test my examples. To
+be specific, I create a <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> file that tells pytest to also collect
+modules titled <code class="docutils literal notranslate"><span class="pre">example*.py</span></code> and functions titled <code class="docutils literal notranslate"><span class="pre">example_*</span></code>. The
+command to test my examples is then as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="n">examples</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>The last configuration that I really like is a plugin for pytest called
+<code class="docutils literal notranslate"><span class="pre">pytest-cov</span></code>, where “cov” stands for “coverage”. This plugin allows pytest to
+produce a report of what percent of your package is covered by your tests:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="o">--</span><span class="n">cov</span><span class="o">=&lt;</span><span class="n">package_name</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">test_directory</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Unfortunately, due to the way the commands are structured, you cannot check the
+examples and check coverage at the same time. This means you need to call pytest
+twice, once for examples and once for your tests. But if you set up CI, then all
+this means is one more line in your CI configuration file. :)</p>
+</div>
+
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="configuring_travis.html" class="btn btn-neutral float-right" title="Configuring Travis CI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sphinx_intro.html" class="btn btn-neutral" title="Introduction to sphinx" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

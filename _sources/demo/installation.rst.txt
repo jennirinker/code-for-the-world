@@ -9,7 +9,7 @@ coders will know how to install your code, but what about new users who may not
 be very familiar with Python?
 
 The ``mypack`` package is very simple and all the dependencies are on PyPi.
-This means they can all be listed within the ``setup.py`` file. There are two
+This means they can all be listed within the ``setup.py`` file. There are three
 ways you can install ``mypack``:
 
 1. Directly from the GitHub repository::

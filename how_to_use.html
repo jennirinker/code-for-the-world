@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; Code for the World 0.1 documentation</title>
+  <title>How to use this project &mdash; Code for the World 0.1 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Configuring Travis CI" href="configuring_travis.html" />
+    <link rel="next" title="Structuring your repository" href="repo_setup/repo_structure.html" />
     <link rel="prev" title="Welcome to Code for the World" href="index.html" /> 
 
   
@@ -82,13 +82,22 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Guide</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="configuring_travis.html">Configuring Travis CI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to use this project</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Examples</span></p>
+<p class="caption"><span class="caption-text">Setting up your repo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="repo_setup/repo_structure.html">Structuring your repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repo_setup/sphinx_intro.html">Introduction to sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repo_setup/pytest_intro.html">Introduction to pytest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repo_setup/configuring_travis.html">Configuring Travis CI</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Demo documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="demo/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo/api.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Demo examples</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="examples/example_1.html">Loading and plotting airfoils</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="examples/example_1.html#specifications">Specifications</a></li>
@@ -147,13 +156,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Installation</li>
+      <li>How to use this project</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/how_to_use.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -166,33 +175,53 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="installation">
-<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>You should always have installation instructions for your package. Experienced
-coders will know how to install your code, but what about new users who may not
-be very familiar with Python?</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">mypack</span></code> package is very simple and all the dependencies are on PyPi.
-This means they can all be listed within the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file. There are two
-ways you can install <code class="docutils literal notranslate"><span class="pre">mypack</span></code>:</p>
-<ol class="arabic">
-<li><p class="first">Directly from the GitHub repository:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jennirinker</span><span class="o">/</span><span class="n">code</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">the</span><span class="o">-</span><span class="n">world</span>
-</pre></div>
-</div>
+  <div class="section" id="how-to-use-this-project">
+<span id="how-to-use"></span><h1>How to use this project<a class="headerlink" href="#how-to-use-this-project" title="Permalink to this headline">¶</a></h1>
+<p>There are two main resources in this project:</p>
+<ol class="arabic simple">
+<li>The content of this documentation website</li>
+<li>The source code and configuration files in the
+<a class="reference external" href="https://github.com/jennirinker/code-for-the-world">GitHub repo</a></li>
+</ol>
+<p><strong>Website content</strong></p>
+<p>The content of the website is intentionally sparse, and it is oriented
+towards practical use. I try not to include too much background information
+on the packages I use because that can be found in other places on the
+internet. Instead, I’ve focused on step-by-step guides for you to quickly get
+a set-up like the one I use here running for one of your own projects.</p>
+<p>There are three sections on the website. First, there is some background
+information on how to structure your repo, sphinx, pytest, and setting up
+continuous integration with Travis CI. Second, there is some demo pages for
+what you might actually have on a real documentation website. Third, there are
+some demo examples generated using the <code class="docutils literal notranslate"><span class="pre">mypack</span></code> package in the source code
+on GitHub.</p>
+<p><strong>Source code on GitHub</strong></p>
+<p>The GitHub repository demonstrates several useful features may be interesting
+for you to see a working example:</p>
+<ol class="arabic simple">
+<li>How Python files can be ordered into a package (see the <code class="docutils literal notranslate"><span class="pre">mypack/</span></code>
+directory)</li>
+<li>A <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file for installing said Python package</li>
+<li>A sphinx configuration file that utilizes (<code class="docutils literal notranslate"><span class="pre">docs/conf.py</span></code>)…<ol class="loweralpha">
+<li>The <code class="docutils literal notranslate"><span class="pre">autodoc</span></code> extension to scrape information from docstrings</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">numpydoc</span></code> extension to allow NumPy-style docstrings</li>
+<li>The sphinx “Read the Docs” theme</li>
+</ol>
 </li>
-<li><p class="first">Clone it and then install from the local copy:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jennirinker</span><span class="o">/</span><span class="n">code</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">the</span><span class="o">-</span><span class="n">world</span>
-<span class="n">cd</span> <span class="n">code</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">the</span><span class="o">-</span><span class="n">world</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">.</span>
-</pre></div>
-</div>
+<li>Example source files for sphinx documentation that demonstrate
+(<code class="docutils literal notranslate"><span class="pre">docs/source/</span></code>)…<ol class="loweralpha">
+<li>A static webpage</li>
+<li>A webpage with content scraped from function/module docstrings</li>
+<li>A webpage with examples, featuring code, generated images, and output</li>
+</ol>
 </li>
-<li><p class="first">Same as above but with an editable installation good for developers:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jennirinker</span><span class="o">/</span><span class="n">code</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">the</span><span class="o">-</span><span class="n">world</span>
-<span class="n">cd</span> <span class="n">code</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">the</span><span class="o">-</span><span class="n">world</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
-</pre></div>
-</div>
+<li>A directory of tests for checking that the code runs as expected
+(<code class="docutils literal notranslate"><span class="pre">tests/</span></code>)</li>
+<li>Commands in a Travis CI configuration file to (<code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code>)…<ol class="loweralpha">
+<li>Automatically run <code class="docutils literal notranslate"><span class="pre">pytest</span></code> to check the examples work</li>
+<li>Automatically run <code class="docutils literal notranslate"><span class="pre">pytest</span></code> to run all tests and check the coverage</li>
+<li>Use sphinx to build the html pages and then deploy them to GitHub pages</li>
+</ol>
 </li>
 </ol>
 </div>
@@ -205,7 +234,7 @@ ways you can install <code class="docutils literal notranslate"><span class="pre
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="configuring_travis.html" class="btn btn-neutral float-right" title="Configuring Travis CI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="repo_setup/repo_structure.html" class="btn btn-neutral float-right" title="Structuring your repository" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Welcome to Code for the World" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

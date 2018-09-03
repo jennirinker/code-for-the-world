@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview: module code &mdash; Code for the World 0.1 documentation</title>
+  <title>Introduction to sphinx &mdash; Code for the World 0.1 documentation</title>
   
 
   
@@ -27,7 +27,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction to pytest" href="pytest_intro.html" />
+    <link rel="prev" title="Structuring your repository" href="repo_structure.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -84,11 +86,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../how_to_use.html">How to use this project</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Setting up your repo</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../repo_setup/repo_structure.html">Structuring your repository</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repo_setup/sphinx_intro.html">Introduction to sphinx</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repo_setup/pytest_intro.html">Introduction to pytest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../repo_setup/configuring_travis.html">Configuring Travis CI</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="repo_structure.html">Structuring your repository</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pytest_intro.html">Introduction to pytest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuring_travis.html">Configuring Travis CI</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Demo documentation</span></p>
 <ul>
@@ -154,10 +156,14 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Overview: module code</li>
+      <li>Introduction to sphinx</li>
     
     
       <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/repo_setup/sphinx_intro.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -169,14 +175,63 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>All modules for which code is available</h1>
-<ul><li><a href="calcs.html">calcs</a></li>
-</ul>
+  <div class="section" id="introduction-to-sphinx">
+<span id="sphinx-intro"></span><h1>Introduction to sphinx<a class="headerlink" href="#introduction-to-sphinx" title="Permalink to this headline">¶</a></h1>
+<p>Sphinx is a Python package that converts user-created source text files into
+some sort of desirable output, often html files that can be hosted on a server
+and thus turned into a navigable website. These text files can either be static
+content written by the developer (e.g., an installation guide or contributer
+guide), but sphinx has several extensions that allow it to automatically
+create content from the docstrings of your modules, functions, and classes.
+There are special sphinx commands to be inserted into the source text files
+in order to trigger this automated sphinx behavior.</p>
+<p>The easiest way to get started with sphinx in your project is to use the
+<code class="docutils literal notranslate"><span class="pre">sphinx-quickstart</span></code> command. If you have installed sphinx in your terminal,
+then you can run this command. The quickstart walks you through some
+configuration questions, then it will create a docs directory with a sphinx
+configuration file, makefiles for both Windows and Linux (if you specified
+that you want a Windows makefile), and a subdirectory that contains the source
+text files.</p>
+<p>I personally hate the sphinx default style. It uses a theme called alabaster
+that I find very visually unappealing. So I often include
+<code class="docutils literal notranslate"><span class="pre">sphinx_rtd_theme</span></code>, which is the sphinx “Read the Docs” theme, as a package
+dependency, and I change my <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> to use the Read the Docs theme. I also
+prefer numpy-style docstrings, so I use the <code class="docutils literal notranslate"><span class="pre">numpydoc</span></code> extension. Lastly,
+I also use the <code class="docutils literal notranslate"><span class="pre">autodoc</span></code> extension to pull content from my docstrings.</p>
+<p>If you want to use the same configuration as I do, use the sphinx quickstart
+to generate your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, then use the compare plugin in Notepadd++ to
+see which lines are different. Update the ones for you that aren’t specific to
+your package.</p>
+<p>To update the content of your source files, I recommend you check the source
+files that I used to generate this very page
+<a href="#id1"><span class="problematic" id="id2">`on GitHub &lt;&gt;`__</span></a>. <strong>LINK</strong>
+They will give you an idea of what your text files need to look like in order
+to generate a website that looks like this.</p>
+<p>Finally, if you want to generate the html files locally and look at what you
+website will look like, here is the command (from your docs folder):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p>Your html files are now in the corresponding subdirectory in your build
+directory. Double-click <code class="docutils literal notranslate"><span class="pre">index.html</span></code> to view the main page. You can set up
+Travis CI to automatically generate your documentation and push it to sphinx:
+<a class="reference internal" href="configuring_travis.html#configuring-travis"><span class="std std-ref">Configuring Travis CI</span></a>.</p>
+</div>
+
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pytest_intro.html" class="btn btn-neutral float-right" title="Introduction to pytest" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="repo_structure.html" class="btn btn-neutral" title="Structuring your repository" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

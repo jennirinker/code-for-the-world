@@ -19,33 +19,51 @@ Here are a few scenarios. Do any of them sound familiar?
 * Your team just did a massive API restructure. After days of work, all your
   tests finally pass again. You drink. Weeks later, someone submits an 
   issue...your examples are all broken.
+* You've written a lot of beautiful tests, but you keep forgetting to run them
+  every time you make changes to master. Surely there is a better way to do
+  this???
 
-This repo is meant to serve an example that you can reverse-engineer to learn
-about and implement...
+I feel your pain. This repo is meant to be an example that you can
+reverse-engineer to learn about and implement...
 
 * Package structuring
 * Making a documentation website using sphinx and GitLab pages
-* Automated testing using Travis-CI
-* Automatic docs generation using Travis-CI
+* Configuring Travis-CI to automate testing and documentation generation
+
+Sound interesting? Cool. Read on: :ref:`how_to_use`.
 
 The source code used to generate the website can be found 
 `on GitHub <https://github.com/jennirinker/code-for-the-world>`_.
-This project was developed for the 2018 Advanced Scientific Python Programming
-summer school in Camerino, Italy.
+This project was developed by Jenni Rinker for the 2018 summer school in
+`Advanced Scientific Programming in Python <https://python.g-node.org/wiki/>`__
+in Camerino, Italy.
 
 Project Contents
 =================
 
 .. toctree::
-    :caption: User Guide
     :maxdepth: 2
 
-    installation
-    configuring_travis
-    api
+    how_to_use
 
 .. toctree::
-    :caption: Examples
+    :caption: Setting up your repo
+    :maxdepth: 2
+
+    repo_setup/repo_structure
+    repo_setup/sphinx_intro
+    repo_setup/pytest_intro
+    repo_setup/configuring_travis
+
+.. toctree::
+    :caption: Demo documentation
+    :maxdepth: 2
+
+    demo/installation
+    demo/api
+
+.. toctree::
+    :caption: Demo examples
     :maxdepth: 2
 
     examples/example_1
