@@ -3,7 +3,8 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = python -msphinx
+# SPHINXBUILD   = python -msphinx  # commenting out this for ASPP 2018 setup
+SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = CodefortheWorld
 SOURCEDIR     = source
 BUILDDIR      = build
