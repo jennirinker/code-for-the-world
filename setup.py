@@ -10,7 +10,7 @@ from setuptools import setup
 
 
 setup(name='mypack',  # name of package on import
-      version='0.1',  # package version
+      version='1.0',  # package version
       description='Demo package for teaching packaging',  # brief description
       url='https://github.com/jennirinker/code-for-the-world',  # git repo url
       author='Jenni Rinker',  # author(s)
