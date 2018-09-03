@@ -8,6 +8,9 @@ You should always have installation instructions for your package. Experienced
 coders will know how to install your code, but what about new users who may not
 be very familiar with Python?
 
+The source files in the
+`GitHub repo <https://github.com/jennirinker/code-for-the-world>`__ include a
+demo Python package called ``mypack``.
 The ``mypack`` package is very simple and all the dependencies are on PyPi.
 This means they can all be listed within the ``setup.py`` file. There are three
 ways you can install ``mypack``:

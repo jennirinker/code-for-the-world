@@ -26,7 +26,8 @@ good answer to this question. It's up to you.
 
 **Where to put tests**
 
-The recommended practice for pytest is `here <>`_. **LINK**
+The recommended practice for pytest is
+`here <https://docs.pytest.org/en/latest/goodpractices.html>`_.
 There are two possible places to put your test files so that pytest can find
 them. I prefer placing my tests in a separate directory away from the code.
 
