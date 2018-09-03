@@ -1,9 +1,11 @@
 # specify language and version
+#     https://docs.travis-ci.com/user/languages/python/
 language: python
 python:
   - "3.6"
 
 # which branches to run CI on
+#     https://docs.travis-ci.com/user/customizing-the-build/#building-specific-branches
 branches:
   only:
   - master
