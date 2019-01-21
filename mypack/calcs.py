@@ -6,8 +6,8 @@
 def get_lift(air_df, wsp, rho=1.225):
     """Determine the lift of an airfoil
 
-    Arguments
-    ---------
+    Parameters
+    -----------
     air_df : pd.Dataframe
         Pandas Dataframe containing x- and y-coordinates of airfoil data.
     wsp : int, float

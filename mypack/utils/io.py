@@ -7,8 +7,8 @@ import pandas as pd
 def read_selig(path):
     """Read a Selig-style airfoil file
 
-    Arguments
-    ---------
+    Parameters
+    -----------
     path : str
         Path to the Selig-stle .dat file.
 

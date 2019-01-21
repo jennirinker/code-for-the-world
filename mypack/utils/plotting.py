@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 def plot_airfoil(air_df):
     """Plot an airfoil
 
-    Arguments
-    ---------
+    Parameters
+    -----------
     air_df : pd.Dataframe
         Pandas Dataframe containing x- and y-coordinates of airfoil data.
     """
