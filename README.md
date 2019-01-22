@@ -12,4 +12,4 @@ The documentation for this project is hosted
 
 The project was developed as part of the 2018 
 [Advanced Scientific Programming in Python](https://python.g-node.org/wiki/)
-summer school.
+summer school and presented in Canberra in 2019.
