@@ -33,7 +33,7 @@ for you to see a working example:
 1. How Python files can be ordered into a package (see the ``mypack/``
    directory) 
 2. A ``setup.py`` file for installing said Python package  
-3. A sphinx configuration file that utilizes (``docs/conf.py``)...
+3. A sphinx configuration file that utilizes (``docs/source/conf.py``)...
 
    a. The ``autodoc`` extension to scrape information from docstrings
    b. The ``numpydoc`` extension to allow NumPy-style docstrings
